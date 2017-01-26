@@ -1,0 +1,17 @@
+{
+  "name": "zcbot",
+  "version": "1.0.0",
+  "description": "ZeroCater slackbot",
+  "bin": {
+    "zctomorrow": "./tomorrow.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "daguej",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.17.1",
+    "request": "^2.79.0"
+  }
+}
