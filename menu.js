@@ -1,11 +1,17 @@
 var request = require('request'),
 	moment = require('moment');
 
+var argv = require('yargs').options({
+	d: {
+		alias: 'days',
+		default: 1
+	}
+}).argv;
 
 var now = moment(),
-	tomorrow = now.clone().add(1, 'days').set({ hour: 0, minute: 0, second: 0, ms: 0 });
+	tomorrow = now.clone().add(argv.days, 'days').set({ hour: 0, minute: 0, second: 0, ms: 0 });
 
-if (now.day() == 6 || now.day() == 0) {
+if (argv.d == 1 && (now.day() == 6 || now.day() == 0)) {
 	return console.log('weekend -- bailing');
 }
 
