@@ -27,7 +27,7 @@ request({
 	gzip: true
 }, function(err, res, body) {
 	if (err || res.statusCode != 200) {
-		return console.error(err || res.statusCode + ' ' + body);
+		return console.error('e1', err || res.statusCode, body);
 	}
 	for (var i = 0; i < body.length; i++) {
 		if (moment(body[i].time * 1000).isBetween(tomorrow, tomorrowEnd)) {
@@ -43,7 +43,7 @@ function getMenu(url) {
 		gzip: true
 	}, function(err, res, menu) {
 		if (err || res.statusCode != 200) {
-			return console.error(err || res.statusCode + ' ' + menu);
+			return console.error('e2', err || res.statusCode, menu);
 		}
 
 		var when = moment(menu.time * 1000);
@@ -77,7 +77,7 @@ function getMenu(url) {
 			}
 		}, function(err, slackRes, body) {
 			if (err || slackRes.statusCode != 200) {
-				console.error(err || slackRes.statusCode + ' ' + body);
+				console.error('e3', err || slackRes.statusCode, body);
 			} else {
 				console.log('ok');
 			}
