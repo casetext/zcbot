@@ -22,7 +22,7 @@ if (tomorrow.day() == 6) {
 var tomorrowEnd = tomorrow.clone().add(1, 'days');
 
 request({
-	url: 'https://api.zerocater.com/v3/companies/' + process.env.ZC_KEY + '/meals',
+	url: 'https://app.zerocater.com/api/v3/companies/' + process.env.ZC_KEY + '/meals',
 	json: true,
 	gzip: true
 }, function(err, res, body) {
